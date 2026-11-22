@@ -92,7 +92,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               </>
             ) : (
               <>
-                <Volume2 className="w-4 h-4 text-theme-primary animate-pulse-subtle" />
+                <Volume2 className="w-4 h-4 text-theme-primary" />
                 <span className="hidden md:inline">Sound On</span>
               </>
             )}

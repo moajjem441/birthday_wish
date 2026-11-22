@@ -236,7 +236,10 @@ export const PersonalizationForm: React.FC<PersonalizationFormProps> = ({
           {/* The Mini Card Preview */}
           <div className="relative rounded-3xl p-6 sm:p-7 glass-card shadow-xl overflow-hidden border border-amber-300/40 transition-all duration-300">
             {/* Soft decorative background glow */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-amber-400/20 rounded-full blur-2xl pointer-events-none" />
+            <div
+              className="absolute top-0 right-0 w-32 h-32 rounded-full pointer-events-none"
+              style={{ background: "radial-gradient(circle, rgba(251, 191, 36, 0.25) 0%, rgba(251, 191, 36, 0) 70%)" }}
+            />
 
             <div className="relative z-10 space-y-4 text-left">
               {/* Decorative Header Stamp */}

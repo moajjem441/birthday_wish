@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import confetti from "canvas-confetti";
+import confetti from "../utils/confetti";
 import { Sparkles, Gift } from "lucide-react";
 import { sound } from "../utils/sound";
 
@@ -43,7 +43,7 @@ export const GiftBoxScene: React.FC<GiftBoxSceneProps> = ({
     // Advance to cake stage after animation unfolds
     setTimeout(() => {
       onOpenComplete();
-    }, 1400);
+    }, 1000);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -92,14 +92,17 @@ export const GiftBoxScene: React.FC<GiftBoxSceneProps> = ({
         <motion.div
           animate={{
             scale: isOpening ? [1, 1.8, 2.2] : [1, 1.15, 1],
-            opacity: isOpening ? [0.4, 0.9, 0] : [0.35, 0.65, 0.35],
+            opacity: isOpening ? [0.4, 0.9, 0.5] : [0.35, 0.65, 0.35],
           }}
           transition={{
             duration: isOpening ? 1.2 : 3,
             repeat: isOpening ? 0 : Infinity,
             ease: "easeInOut",
           }}
-          className="absolute inset-0 m-auto w-48 h-48 sm:w-56 sm:h-56 bg-gradient-to-tr from-amber-400 to-rose-400 rounded-full blur-3xl pointer-events-none -z-10"
+          className="absolute inset-0 m-auto w-48 h-48 sm:w-56 sm:h-56 rounded-full pointer-events-none -z-10"
+          style={{
+            background: "radial-gradient(circle, rgba(245, 158, 11, 0.45) 0%, rgba(244, 63, 94, 0.25) 45%, rgba(245, 158, 11, 0) 70%)",
+          }}
         />
 
         {/* 3D SVG Gift Box with Lid Lifting Animation */}
@@ -159,7 +162,7 @@ export const GiftBoxScene: React.FC<GiftBoxSceneProps> = ({
             <motion.g
               animate={
                 isOpening
-                  ? { y: -80, rotate: -18, opacity: [1, 1, 0] }
+                  ? { y: -80, rotate: -18 }
                   : { y: [0, -4, 0] }
               }
               transition={

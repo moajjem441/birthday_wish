@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  color-scheme: only light;
   /* Default: Golden Champagne */
   --color-bg: #fdfbf7;
   --color-bg-gradient: radial-gradient(circle at 50% 10%, #fffbf2 0%, #f7efe2 60%, #ede3d1 100%);
@@ -90,6 +91,9 @@
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--color-border);
   box-shadow: 0 12px 36px -8px var(--color-glow), 0 4px 14px -3px rgba(0, 0, 0, 0.05);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .glass-pill {
@@ -97,6 +101,13 @@
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--color-border);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+canvas {
+  background-color: transparent !important;
 }
 
 [data-theme="midnight-starlight"] .glass-pill {

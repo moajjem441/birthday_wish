@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import confetti from "canvas-confetti";
+import confetti from "../utils/confetti";
 import { RotateCcw, Copy, Check,  Sparkles, FastForward, Heart } from "lucide-react";
 import type { BirthdayWish } from "../types/wish";
 import { copyToClipboard, generateWishUrl } from "../utils/share";
@@ -157,8 +157,14 @@ export const LetterScene: React.FC<LetterSceneProps> = ({
         className="w-full relative glass-card rounded-3xl p-6 sm:p-10 shadow-2xl border border-amber-300/50 overflow-hidden"
       >
         {/* Soft background ambient glow */}
-        <div className="absolute -top-12 -right-12 w-48 h-48 bg-amber-400/20 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-12 -left-12 w-48 h-48 bg-rose-400/15 rounded-full blur-3xl pointer-events-none" />
+        <div
+          className="absolute -top-12 -right-12 w-48 h-48 rounded-full pointer-events-none"
+          style={{ background: "radial-gradient(circle, rgba(251, 191, 36, 0.25) 0%, rgba(251, 191, 36, 0) 70%)" }}
+        />
+        <div
+          className="absolute -bottom-12 -left-12 w-48 h-48 rounded-full pointer-events-none"
+          style={{ background: "radial-gradient(circle, rgba(244, 63, 94, 0.2) 0%, rgba(244, 63, 94, 0) 70%)" }}
+        />
 
         <div className="relative z-10 space-y-6">
           {/* Card Top Border Header */}
@@ -179,11 +185,12 @@ export const LetterScene: React.FC<LetterSceneProps> = ({
           <div className="text-center my-4 relative py-2 flex flex-col items-center">
             {/* Glowing aura during audio */}
             <div
-              className={`absolute inset-0 m-auto w-72 h-36 rounded-full blur-3xl pointer-events-none transition-opacity duration-700 ${
-                isDancing
-                  ? "bg-gradient-to-tr from-amber-400/30 to-rose-400/25 opacity-100 animate-pulse-subtle"
-                  : "opacity-0"
+              className={`absolute inset-0 m-auto w-72 h-36 rounded-full pointer-events-none transition-opacity duration-700 ${
+                isDancing ? "opacity-100" : "opacity-0"
               }`}
+              style={{
+                background: "radial-gradient(ellipse at center, rgba(251, 191, 36, 0.35) 0%, rgba(244, 63, 94, 0.2) 45%, rgba(251, 191, 36, 0) 70%)",
+              }}
             />
 
             <h2 className="font-playfair text-2xl sm:text-4xl md:text-5xl font-bold text-theme-heading leading-tight">

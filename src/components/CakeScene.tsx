@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import confetti from "canvas-confetti";
+import confetti from "../utils/confetti";
 import { Sparkles, Wind } from "lucide-react";
 import { sound } from "../utils/sound";
 import { birthdayAudio } from "../utils/birthdayAudio";
@@ -117,7 +117,12 @@ export const CakeScene: React.FC<CakeSceneProps> = ({
       {/* Cake Container */}
       <div className="relative w-64 sm:w-88 md:w-96 flex flex-col items-center my-1 sm:my-2">
         {/* Soft radial glow behind cake */}
-        <div className="absolute top-1/4 w-64 h-64 bg-amber-400/20 dark:bg-amber-400/10 rounded-full blur-3xl pointer-events-none -z-10" />
+        <div
+          className="absolute top-1/4 w-64 h-64 rounded-full pointer-events-none -z-10"
+          style={{
+            background: "radial-gradient(circle, rgba(251, 191, 36, 0.25) 0%, rgba(251, 191, 36, 0) 70%)",
+          }}
+        />
 
         {/* The Candle Row Above the Cake - Seated directly on the top cake tier */}
         <div className="relative z-20 flex justify-center items-end gap-5 sm:gap-7 h-28 sm:h-32 mb-[-38px] sm:mb-[-44px]">

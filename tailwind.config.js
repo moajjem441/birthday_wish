@@ -37,8 +37,8 @@ export default {
           '50%': { transform: 'translateY(-10px)' },
         },
         pulseSubtle: {
-          '0%, 100%': { opacity: '1', transform: 'scale(1)' },
-          '50%': { opacity: '0.85', transform: 'scale(0.98)' },
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.85' },
         },
         flicker: {
           '0%, 100%': { transform: 'scale(1) rotate(-1deg)', opacity: '0.95' },

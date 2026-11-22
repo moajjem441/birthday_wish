@@ -81,8 +81,8 @@ export const CelebrationFlow: React.FC<CelebrationFlowProps> = ({
       </nav>
 
       {/* Main Scene Transitions */}
-      <div className="w-full">
-        <AnimatePresence mode="wait">
+      <div className="w-full grid grid-cols-1 grid-rows-1">
+        <AnimatePresence>
           {stage === "gift" && (
             <motion.div
               key="gift-stage"
@@ -90,6 +90,7 @@ export const CelebrationFlow: React.FC<CelebrationFlowProps> = ({
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 1.05 }}
               transition={{ duration: 0.4 }}
+              className="col-start-1 row-start-1 w-full"
             >
               <GiftBoxScene
                 recipient={wish.recipient}
@@ -105,6 +106,7 @@ export const CelebrationFlow: React.FC<CelebrationFlowProps> = ({
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.4 }}
+              className="col-start-1 row-start-1 w-full"
             >
               <CakeScene
                 recipient={wish.recipient}
@@ -121,6 +123,7 @@ export const CelebrationFlow: React.FC<CelebrationFlowProps> = ({
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.4 }}
+              className="col-start-1 row-start-1 w-full"
             >
               <LetterScene
                 wish={wish}

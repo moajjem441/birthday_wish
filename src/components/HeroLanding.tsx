@@ -15,9 +15,18 @@ export const HeroLanding: React.FC<HeroLandingProps> = ({
     <section className="relative overflow-hidden py-12 md:py-20 px-4 sm:px-6 flex flex-col items-center justify-center text-center min-h-[85vh]">
       {/* Ambient background particles & glows */}
       <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
-        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[520px] h-[520px] bg-amber-400/15 dark:bg-amber-400/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/3 -left-20 w-80 h-80 bg-rose-400/15 dark:bg-rose-400/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 -right-20 w-80 h-80 bg-teal-400/15 dark:bg-teal-400/10 rounded-full blur-3xl" />
+        <div
+          className="absolute -top-24 left-1/2 -translate-x-1/2 w-[520px] h-[520px] rounded-full pointer-events-none"
+          style={{ background: "radial-gradient(circle, rgba(251, 191, 36, 0.18) 0%, rgba(251, 191, 36, 0) 70%)" }}
+        />
+        <div
+          className="absolute top-1/3 -left-20 w-80 h-80 rounded-full pointer-events-none"
+          style={{ background: "radial-gradient(circle, rgba(244, 63, 94, 0.18) 0%, rgba(244, 63, 94, 0) 70%)" }}
+        />
+        <div
+          className="absolute top-1/2 -right-20 w-80 h-80 rounded-full pointer-events-none"
+          style={{ background: "radial-gradient(circle, rgba(20, 184, 166, 0.18) 0%, rgba(20, 184, 166, 0) 70%)" }}
+        />
 
         {/* Floating subtle sparkles */}
         {[...Array(6)].map((_, i) => (
@@ -98,7 +107,10 @@ export const HeroLanding: React.FC<HeroLandingProps> = ({
           title="Click to start creating magic!"
         >
           {/* Glowing pedestal */}
-          <div className="absolute w-44 h-16 bg-amber-400/25 dark:bg-amber-400/15 rounded-[100%] blur-xl group-hover:blur-2xl transition-all" />
+          <div
+            className="absolute w-44 h-16 rounded-[100%] transition-all pointer-events-none"
+            style={{ background: "radial-gradient(ellipse at center, rgba(251, 191, 36, 0.3) 0%, rgba(251, 191, 36, 0) 70%)" }}
+          />
 
           {/* Floating animated gift box */}
           <motion.div
